@@ -33,7 +33,7 @@ resource "aws_instance" "staging" {
   ebs_optimized               = false
   instance_type               = "t2.micro"
   monitoring                  = true
-  key_name                    = "${var.key_pair_name}}"
+  key_name                    = "${var.key_pair_name}"
   subnet_id                   = "${aws_subnet.public-web-staging.id}"
   vpc_security_group_ids      = ["${aws_security_group.app-sg.id}"]
   associate_public_ip_address = true
